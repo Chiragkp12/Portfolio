@@ -3,143 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chirag K P | Portfolio</title>
+    <title>Chirag K P | AI/ML Engineer & Software Developer</title>
+    <meta name="description" content="Portfolio of Chirag K P — AI/ML Engineer, Data Analyst, and Software Developer. Building intelligent systems and premium digital experiences.">
+    <meta name="author" content="Chirag K P">
+    <meta name="keywords" content="Chirag K P, Portfolio, AI Engineer, ML Engineer, Data Analyst, Software Developer, Frontend Developer, UI UX">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chirag K P | AI/ML Engineer & Software Developer">
+    <meta property="og:description" content="Building intelligent systems and premium digital experiences.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#hero" class="logo">Chirag K P</a>
-            <button class="mobile-toggle" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+    <!-- Particle Network Canvas -->
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="navbar" aria-label="Primary Navigation">
+        <div class="navbar-inner">
+            <div class="nav-container">
+                <a href="#hero" class="logo" aria-label="Chirag K P Home">Chirag K P</a>
+
+                <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a role="menuitem" href="#hero" class="nav-link active">Home</a></li>
+                    <li role="none"><a role="menuitem" href="#about" class="nav-link">About</a></li>
+                    <li role="none"><a role="menuitem" href="#experience" class="nav-link">Experience</a></li>
+                    <li role="none"><a role="menuitem" href="#skills" class="nav-link">Skills</a></li>
+                    <li role="none"><a role="menuitem" href="#projects" class="nav-link">Projects</a></li>
+                    <li role="none"><a role="menuitem" href="#certifications" class="nav-link">Certifications</a></li>
+                    <li role="none"><a role="menuitem" href="#contact" class="nav-link">Contact</a></li>
+
+                    <li class="nav-socials" role="none">
+                        <a href="https://github.com/" class="nav-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.8-.26.8-.58v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.33-1.77-1.33-1.77-1.08-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.8.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/" class="nav-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.49v6.25zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                        </a>
+                    </li>
+
+                    <li role="none">
+                        <a href="assets/Chirag resume.pdf" class="resume-btn" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Resume
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ============ HERO SECTION ============ -->
     <header id="hero" class="hero-section">
-        <div class="container hero-content">
-            <h1 class="hero-name fade-in">Chirag K P</h1>
-            <h2 class="hero-role fade-in">Front-End Developer & UI/UX Designer & Portflio Designer</h2>
-            <p class="hero-tagline fade-in">Crafting visually calm, modern, and user-centric digital experiences.</p>
-            <div class="hero-cta fade-in">
-                <a href="#projects" class="btn btn-primary">View Work</a>
-                <a href="Chirag_resume.pdf" class="btn btn-secondary" target="_blank">Resume</a>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-eyebrow fade-in d-1">Available for opportunities</span>
+
+                    <h1 class="hero-name fade-in d-2">
+                        <span class="gradient-text">Chirag K P</span>
+                    </h1>
+
+                    <h2 class="hero-role fade-in d-3">
+                        <span class="mono">&lt;/&gt;</span> Front-End Developer & UI/UX Designer
+                    </h2>
+
+                    <p class="hero-tagline fade-in d-4">
+                        Crafting visually calm, modern, and user-centric digital experiences. I bridge the gap between beautiful design and clean, performant code — building interfaces that feel as good as they look.
+                    </p>
+
+                    <!-- Stats Panel -->
+                    <div class="stats-panel fade-in d-5">
+                        <div class="stat-item">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">6+</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta fade-in d-6">
+                        <a href="#projects" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            View Projects
+                        </a>
+                        <a href="assets/Chirag resume.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download CV
+                        </a>
+                        <a href="#contact" class="btn btn-ghost">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual fade-in d-3">
+                    <div class="hero-orb" aria-hidden="true"></div>
+                    <div class="neural-frame">
+                        <div class="neural-node node-1" aria-hidden="true"></div>
+                        <div class="neural-node node-2" aria-hidden="true"></div>
+                        <div class="neural-node node-3" aria-hidden="true"></div>
+                        <div class="neural-node node-4" aria-hidden="true"></div>
+                        <div class="neural-node node-5" aria-hidden="true"></div>
+                        <div class="neural-node node-6" aria-hidden="true"></div>
+
+                        <div class="avatar-wrapper">
+                            <img src="assets/profile.jpeg" alt="Chirag K P" loading="eager">
+                        </div>
+
+                        <div class="code-badge" aria-hidden="true">
+                            <span style="color: #10B981;">●</span> const dev = "active"
+                        </div>
+                        <div class="status-badge" aria-hidden="true">
+                            <span class="status-dot"></span>
+                            Open to Work
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="section about-section scroll-reveal">
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about" class="section about-section" aria-labelledby="about-title">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">01 / About</span>
+                <h2 id="about-title" class="section-title">
+                    About <span class="highlight">Me</span>
+                </h2>
+                <p class="section-subtitle">A quick look at who I am and what drives me as a developer.</p>
+            </div>
+
             <div class="about-content">
-                <div class="about-image-wrapper">
-                    <img src="profile.jpeg" alt="Chirag K P" class="about-image">
+                <div class="about-image-wrapper scroll-reveal delay-1">
+                    <div class="about-card-decor corner-tl" aria-hidden="true">&#47;&#47; profile.tsx</div>
+                    <div class="about-image-frame">
+                        <img src="assets/profile.jpeg" alt="Portrait of Chirag K P" class="about-image" loading="lazy">
+                    </div>
+                    <div class="about-card-decor corner-br" aria-hidden="true">{ built: "with-care" }</div>
                 </div>
-                <div class="about-text">
-                    <p>I specialize in building clean, minimal, and aesthetic websites that prioritize user experience. With a background in both design and development, I bridge the gap between visual appeal and technical performance.</p>
-                    <p>My approach is simple: keep it professional, uncluttered, and pixel-perfect. I enjoy solving complex problems with elegant solutions and am always eager to learn new technologies.</p>
+
+                <div class="about-text scroll-reveal delay-2">
+                    <p>
+                        I specialize in building clean, minimal, and aesthetic websites that prioritize user experience. With a background in both design and development, I bridge the gap between visual appeal and technical performance.
+                    </p>
+                    <p>
+                        My approach is simple: keep it professional, uncluttered, and pixel-perfect. I enjoy solving complex problems with elegant solutions and am always eager to learn new technologies. Whether it's a polished landing page or a complex UI, I bring the same attention to detail to every project.
+                    </p>
+
+                    <div class="profile-cards">
+                        <div class="profile-card">
+                            <div class="profile-card-label">Role</div>
+                            <div class="profile-card-value accent">Front-End Developer</div>
+                        </div>
+                        <div class="profile-card">
+                            <div class="profile-card-label">Focus</div>
+                            <div class="profile-card-value">UI/UX Design</div>
+                        </div>
+                        <div class="profile-card">
+                            <div class="profile-card-label">Based in</div>
+                            <div class="profile-card-value">India</div>
+                        </div>
+                        <div class="profile-card">
+                            <div class="profile-card-label">Status</div>
+                            <div class="profile-card-value" style="color: #10B981;">● Available</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section scroll-reveal">
+    <!-- ============ EXPERIENCE TIMELINE ============ -->
+    <section id="experience" class="section experience-section" aria-labelledby="experience-title">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <!-- Skill Cards -->
-                <div class="skill-card">
-                    <h3>HTML5 & CSS3</h3>
-                    <p>Semantic markup, Flexbox, Grid</p>
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">02 / Journey</span>
+                <h2 id="experience-title" class="section-title">
+                    Experience & <span class="highlight">Timeline</span>
+                </h2>
+                <p class="section-subtitle">My professional journey, milestones, and the path that shaped my craft.</p>
+            </div>
+
+            <div class="timeline-wrap">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-node" aria-hidden="true"></div>
+                    <article class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role">Front-End Developer (Freelance)</h3>
+                            <span class="timeline-dates">2024 — Present</span>
+                        </div>
+                        <div class="timeline-company">Independent &middot; Client Projects</div>
+                        <p class="timeline-desc">
+                            Delivering bespoke web solutions with a focus on clean UI, smooth interactions, and performance.
+                        </p>
+                        <ul class="timeline-points">
+                            <li>Designed and built responsive portfolio and landing pages for clients.</li>
+                            <li>Implemented modern animations, glassmorphism UI, and micro-interactions.</li>
+                            <li>Optimized page performance using code splitting, lazy loading, and best practices.</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Figma</span>
+                        </div>
+                    </article>
                 </div>
-                <div class="skill-card">
-                    <h3>JavaScript (ES6+)</h3>
-                    <p>DOM manipulation, Async/Await</p>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item scroll-reveal delay-1">
+                    <div class="timeline-node" aria-hidden="true"></div>
+                    <article class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role">Game Development — 1st Place</h3>
+                            <span class="timeline-dates">2026</span>
+                        </div>
+                        <div class="timeline-company">Tech Sutra Event</div>
+                        <p class="timeline-desc">
+                            Won the game development competition with a polished, playable submission built on time.
+                        </p>
+                        <ul class="timeline-points">
+                            <li>Designed game mechanics, UI flows, and visual identity from scratch.</li>
+                            <li>Built the full prototype and iterated rapidly based on playtest feedback.</li>
+                            <li>Presented the project to judges and secured the winning position.</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>Game Dev</span><span>Rapid Prototyping</span><span>UI Design</span>
+                        </div>
+                    </article>
                 </div>
-                <div class="skill-card">
-                    <h3>React.js</h3>
-                    <p>Components, Hooks, State Management</p>
-                </div>
-                <div class="skill-card">
-                    <h3>UI/UX Design</h3>
-                    <p>Figma, Prototyping, Wireframing</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Responsive Design</h3>
-                    <p>Mobile-first, Media Queries</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Git & GitHub</h3>
-                    <p>Version Control, Collaboration</p>
+
+                <!-- Experience Item 3 -->
+                <div class="timeline-item scroll-reveal delay-2">
+                    <div class="timeline-node" aria-hidden="true"></div>
+                    <article class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role">Student — Engineering</h3>
+                            <span class="timeline-dates">Ongoing</span>
+                        </div>
+                        <div class="timeline-company">Formal Education</div>
+                        <p class="timeline-desc">
+                            Building a strong foundation in computer science, software engineering, and web technologies while continuously learning on the side.
+                        </p>
+                        <ul class="timeline-points">
+                            <li>Completed certifications in frontend web development, UX design, and algorithms.</li>
+                            <li>Built personal projects in React, Vue, and vanilla JS to apply theory to practice.</li>
+                            <li>Participated in hackathons and tech events to expand practical skills.</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>CS Fundamentals</span><span>Self Study</span><span>Project Based</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section scroll-reveal">
+    <!-- ============ SKILLS SECTION ============ -->
+    <section id="skills" class="section skills-section" aria-labelledby="skills-title">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">03 / Toolkit</span>
+                <h2 id="skills-title" class="section-title">
+                    Technical <span class="highlight">Skills</span>
+                </h2>
+                <p class="section-subtitle">The technologies, tools, and frameworks I use to bring ideas to life.</p>
+            </div>
+
+            <div class="skills-layout">
+                <!-- Category: Web Development -->
+                <div class="skill-category scroll-reveal" data-category="web">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <div>
+                            <div class="skill-category-title">Web Development & UI/UX</div>
+                        </div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>HTML5</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>CSS3</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>JavaScript (ES6+)</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>React.js</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Vue.js</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Responsive Design</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Flexbox & Grid</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>UI / UX Design</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Figma</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Prototyping</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Wireframing</span>
+                    </div>
+                </div>
+
+                <!-- Category: Programming -->
+                <div class="skill-category scroll-reveal delay-1" data-category="programming">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <div>
+                            <div class="skill-category-title">Programming & Core</div>
+                        </div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>JavaScript (ES6+)</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>DOM Manipulation</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Async / Await</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Algorithms</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Data Structures</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Problem Solving</span>
+                    </div>
+                </div>
+
+                <!-- Category: DevOps / Tools -->
+                <div class="skill-category scroll-reveal delay-2" data-category="devops">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div>
+                            <div class="skill-category-title">Tools & Version Control</div>
+                        </div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Git</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>GitHub</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Version Control</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>Collaboration</span>
+                        <span class="skill-chip"><span class="skill-chip-dot"></span>VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">04 / Work</span>
+                <h2 id="projects-title" class="section-title">
+                    Featured <span class="highlight">Projects</span>
+                </h2>
+                <p class="section-subtitle">Selected work showcasing my approach to design, code, and building polished products.</p>
+            </div>
+
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <article class="project-card">
+                <article class="project-card scroll-reveal">
+                    <div class="project-visual" aria-hidden="true">
+                        <div class="project-visual-inner">
+<pre class="project-visual-code"><span class="co">// E-Commerce Dashboard</span>
+<span class="kw">const</span> <span class="va">dashboard</span> = {
+  <span class="va">stack</span>: [<span class="st">"React"</span>, <span class="st">"Node"</span>],
+  <span class="va">charts</span>: <span class="st">"Chart.js"</span>,
+  <span class="fn">render</span>: () => <span class="st">"realtime"</span>
+};</pre>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">All in one Dashboard</h3>
-                        <p class="project-desc">Turning plain words into powerful code—where ideas don’t wait for syntax.</p>
+                        <span class="project-category">Web App</span>
+                        <h3 class="project-title">E-Commerce Dashboard</h3>
+                        <p class="project-desc">A modern dashboard for managing products and orders with real-time data visualization and an admin-first UX.</p>
                         <div class="project-tech">
-                            <span>React</span>
-                            <span>Chart.js</span>
-                            <span>Node.js</span>
+                            <span>React</span><span>Chart.js</span><span>Node.js</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://talk-to-code.base44.app" class="link-text">Live Demo &rarr;</a>
+                            <a href="#" class="project-link project-link-demo">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link project-link-github">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.8-.26.8-.58v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.33-1.77-1.33-1.77-1.08-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.8.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                                GitHub
+                            </a>
                         </div>
                     </div>
                 </article>
+
                 <!-- Project 2 -->
-                <article class="project-card">
+                <article class="project-card scroll-reveal delay-1">
+                    <div class="project-visual" aria-hidden="true">
+                        <div class="project-visual-inner">
+<pre class="project-visual-code"><span class="co">// Portfolio Template</span>
+<span class="kw">function</span> <span class="fn">Portfolio</span>() {
+  <span class="kw">return</span> (
+    <span class="st">&lt;Design</span> minimal <span class="kw">/&gt;</span>
+  );
+}</pre>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">Neuro Grid</h3>
-                        <p class="project-desc">A tech based game that givs a idea about njetwork intrusion and node connections</p>
+                        <span class="project-category">UI / Template</span>
+                        <h3 class="project-title">Portfolio Template</h3>
+                        <p class="project-desc">A minimal, recruiter-friendly portfolio template designed for developers — clean, fast, and easy to customize.</p>
                         <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://neuro-grid.base44.app/" class="link-text">Live Demo &rarr;</a>
+                            <a href="#" class="project-link project-link-demo">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link project-link-github">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.8-.26.8-.58v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.33-1.77-1.33-1.77-1.08-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.8.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                                GitHub
+                            </a>
                         </div>
                     </div>
                 </article>
+
                 <!-- Project 3 -->
-                <article class="project-card">
+                <article class="project-card scroll-reveal delay-2">
+                    <div class="project-visual" aria-hidden="true">
+                        <div class="project-visual-inner">
+<pre class="project-visual-code"><span class="co">// Weather App</span>
+<span class="kw">const</span> <span class="va">forecast</span> =
+  <span class="kw">await</span> <span class="fn">fetch</span>(<span class="st">OpenWeather</span>);
+<span class="kw">return</span> {
+  temp, condition,
+  <span class="va">ui</span>: <span class="st">"beautiful"</span>
+};</pre>
+                        </div>
+                    </div>
                     <div class="project-content">
+                        <span class="project-category">Web App</span>
                         <h3 class="project-title">Weather App</h3>
-                        <p class="project-desc">A clean weather application providing accurate forecasts with a beautiful UI.</p>
+                        <p class="project-desc">A clean weather application providing accurate forecasts with a beautiful UI and smooth animations.</p>
                         <div class="project-tech">
-                            <span>Vue.js</span>
-                            <span>OpenWeather API</span>
+                            <span>Vue.js</span><span>OpenWeather API</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="link-text">Live Demo &rarr;</a>
+                            <a href="#" class="project-link project-link-demo">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link project-link-github">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.8-.26.8-.58v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.33-1.77-1.33-1.77-1.08-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.8.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                                GitHub
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -147,65 +474,238 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="section certifications-section scroll-reveal">
+    <!-- ============ CERTIFICATIONS SECTION ============ -->
+    <section id="certifications" class="section certifications-section" aria-labelledby="certifications-title">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">05 / Credentials</span>
+                <h2 id="certifications-title" class="section-title">
+                    Certifications & <span class="highlight">Achievements</span>
+                </h2>
+                <p class="section-subtitle">Verified credentials and awards that validate my skills and dedication.</p>
+            </div>
+
             <div class="certifications-grid">
-                <div class="cert-card">
-                    <h3>Frontend Web Developer</h3>
-                    <p class="cert-issuer">Udacity Nanodegree</p>
-                    <p class="cert-date">2024</p>
+                <!-- Cert 1 -->
+                <div class="cert-card scroll-reveal">
+                    <div class="cert-top">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="cert-titles">
+                            <h3>Frontend Web Developer</h3>
+                            <div class="cert-issuer">Udacity Nanodegree</div>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <div class="cert-date">2024</div>
+                        <span class="cert-badge">Certified</span>
+                    </div>
                 </div>
-                <div class="cert-card">
-                    <h3>Google UX Design</h3>
-                    <p class="cert-issuer">Coursera</p>
-                    <p class="cert-date">2023</p>
+
+                <!-- Cert 2 -->
+                <div class="cert-card scroll-reveal delay-1">
+                    <div class="cert-top">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="cert-titles">
+                            <h3>Google UX Design</h3>
+                            <div class="cert-issuer">Coursera</div>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <div class="cert-date">2023</div>
+                        <span class="cert-badge">Certified</span>
+                    </div>
                 </div>
-                <div class="cert-card">
-                    <h3>JavaScript Algorithms</h3>
-                    <p class="cert-issuer">FreeCodeCamp</p>
-                    <p class="cert-date">2023</p>
+
+                <!-- Cert 3 -->
+                <div class="cert-card scroll-reveal delay-2">
+                    <div class="cert-top">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="cert-titles">
+                            <h3>JavaScript Algorithms</h3>
+                            <div class="cert-issuer">FreeCodeCamp</div>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <div class="cert-date">2023</div>
+                        <span class="cert-badge">Certified</span>
+                    </div>
                 </div>
-                <div class="cert-card">
-                    <h3>Game developmet</h3>
-                    <p class="cert-issuer">winner at tech sutra event</p>
-                    <p class="cert-date">2026</p>
+
+                <!-- Cert 4 (Achievement) -->
+                <div class="cert-card achievement scroll-reveal delay-3">
+                    <div class="cert-top">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="cert-titles">
+                            <h3>Game Development — 1st Place</h3>
+                            <div class="cert-issuer">Winner at Tech Sutra Event</div>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <div class="cert-date">2026</div>
+                        <span class="cert-badge">Award</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section scroll-reveal">
+    <!-- ============ CONTACT SECTION ============ -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">06 / Connect</span>
+                <h2 id="contact-title" class="section-title">
+                    Let's Build <span class="highlight">Something</span>
+                </h2>
+                <p class="section-subtitle">Have an idea, opportunity, or project in mind? I'd love to hear about it.</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- CTA / Contact Methods -->
+                <div class="contact-cta-card scroll-reveal">
+                    <div class="contact-eyebrow">Get in Touch</div>
+                    <h3 class="contact-heading">
+                        Ready to create something <span class="gradient">remarkable</span>?
+                    </h3>
+                    <p class="contact-subheading">
+                        Whether it's a collaboration, a freelance project, or a quick hello — my inbox is always open. I'll get back to you as soon as I can.
+                    </p>
+
+                    <div class="contact-methods">
+                        <a href="mailto:chirag@example.com" class="contact-method">
+                            <div class="contact-method-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div class="contact-method-info">
+                                <div class="contact-method-label">Email</div>
+                                <div class="contact-method-value">chirag@example.com</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/" class="contact-method" target="_blank" rel="noopener noreferrer">
+                            <div class="contact-method-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.49v6.25zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                            </div>
+                            <div class="contact-method-info">
+                                <div class="contact-method-label">LinkedIn</div>
+                                <div class="contact-method-value">Connect with me</div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/" class="contact-method" target="_blank" rel="noopener noreferrer">
+                            <div class="contact-method-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.8-.26.8-.58v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.33-1.77-1.33-1.77-1.08-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.8.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            </div>
+                            <div class="contact-method-info">
+                                <div class="contact-method-label">GitHub</div>
+                                <div class="contact-method-value">See my code</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+                <!-- Contact Form -->
+                <div class="contact-form-card scroll-reveal delay-1">
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" required class="form-input" placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" required class="form-input" placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="form-textarea" placeholder="Tell me about your project, role, or idea..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            Send Message
+                        </button>
+
+                        <div class="form-submit-info">
+                            <div class="form-status">
+                                <span class="status-indicator" aria-hidden="true"></span>
+                                <span>Messages are delivered via email</span>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="How can I help you?"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ============ FOOTER ============ -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Chirag K P. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#hero" class="footer-logo">Chirag K P</a>
+                    <p class="footer-tagline">
+                        Front-End Developer & UI/UX Designer. Crafting clean, minimal, and aesthetic digital experiences with code and care.
+                    </p>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Navigate</div>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">More</div>
+                    <ul class="footer-links">
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="assets/Chirag resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer-col-title">Social</div>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="mailto:chirag@example.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    &copy; 2026 Chirag K P. All rights reserved.
+                </div>
+                <div class="footer-socials" aria-label="Social links">
+                    <a href="https://github.com/" class="footer-social" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.8-.26.8-.58v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.33-1.77-1.33-1.77-1.08-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.3.47-2.38 1.23-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.8.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/" class="footer-social" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.49v6.25zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                    </a>
+                    <a href="mailto:chirag@example.com" class="footer-social" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
